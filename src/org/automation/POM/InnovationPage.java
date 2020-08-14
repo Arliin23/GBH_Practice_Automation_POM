@@ -6,8 +6,8 @@ import org.openqa.selenium.WebElement;
 
 public class InnovationPage extends Base{
 
-    static By solutionBtn = By.cssSelector("#menu-item-4135 > a > span.menu-item__text");
-    static By itBusTransfBtn = By.cssSelector("#menu-item-4140 > a > span.menu-item__text");
+    static By solutionLocator = By.cssSelector("#menu-item-4135 > a > span.menu-item__text");
+    static By itBusTransfLocator = By.cssSelector("#menu-item-4140 > a > span.menu-item__text");
 
     public InnovationPage(WebDriver driver) {
         super(driver);
@@ -23,9 +23,10 @@ public class InnovationPage extends Base{
         }
     }
 
+    //Method to go to the Next Page
     public static void goNextPage(){
-        WebElement btnSolution = findElement(solutionBtn);
-        WebElement btnItBusTransf = findElement(itBusTransfBtn);
+        WebElement btnSolution = findElement(solutionLocator);
+        WebElement btnItBusTransf = findElement(itBusTransfLocator);
         waitElement(btnSolution);
         hoverLists(btnSolution);
         waitElement(btnItBusTransf);

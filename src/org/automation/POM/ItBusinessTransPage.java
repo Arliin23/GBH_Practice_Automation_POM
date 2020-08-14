@@ -5,9 +5,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class ItBusinessTransPage extends Base{
-    static By solutionBtn = By.cssSelector("#menu-item-4135 > a > span.menu-item__text");
-    static By cusSoftDevBtn = By.cssSelector("#menu-item-4141 > a > span.menu-item__text");
 
+    //Locators of elements
+    static By solutionLocator = By.cssSelector("#menu-item-4135 > a > span.menu-item__text");
+    static By cusSoftDevLocator = By.cssSelector("#menu-item-4141 > a > span.menu-item__text");
+
+    //Constructor
     public ItBusinessTransPage(WebDriver driver) {
         super(driver);
     }
@@ -22,9 +25,10 @@ public class ItBusinessTransPage extends Base{
         }
     }
 
+    //Method to go to the Next Page
     public static void goNextPage(){
-        WebElement btnSolution = findElement(solutionBtn);
-        WebElement btncusSoftDev = findElement(cusSoftDevBtn);
+        WebElement btnSolution = findElement(solutionLocator);
+        WebElement btncusSoftDev = findElement(cusSoftDevLocator);
         waitElement(btnSolution);
         hoverLists(btnSolution);
         waitElement(btncusSoftDev);

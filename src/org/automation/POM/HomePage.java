@@ -6,8 +6,9 @@ import org.openqa.selenium.WebElement;
 
 public class HomePage extends Base{
 
-    static By solutionBtn = By.cssSelector("#menu-item-4135 > a > span.menu-item__text");
-    static By innovationSquadBtn = By.cssSelector("#menu-item-4139 > a > span.menu-item__text");
+    //Locators of elements
+    static By solutionLocator = By.cssSelector("#menu-item-4135 > a > span.menu-item__text");
+    static By innovationSquadLocator = By.cssSelector("#menu-item-4139 > a > span.menu-item__text");
 
     //Constructor
     public HomePage(WebDriver driver) {
@@ -25,9 +26,10 @@ public class HomePage extends Base{
         }
     }
 
+    //Method to go to the Next Page
     public static void goNextPage(){
-        WebElement btnSolution = findElement(solutionBtn);
-        WebElement btnInnovationSquad = findElement(innovationSquadBtn);
+        WebElement btnSolution = findElement(solutionLocator);
+        WebElement btnInnovationSquad = findElement(innovationSquadLocator);
         waitElement(btnSolution);
         hoverLists(btnSolution);
         waitElement(btnInnovationSquad);

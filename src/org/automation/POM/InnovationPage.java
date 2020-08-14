@@ -6,8 +6,8 @@ import org.openqa.selenium.WebElement;
 
 public class InnovationPage extends Base{
 
-    static By solutionLocator = By.cssSelector("#menu-item-4135 > a > span.menu-item__text");
     static By itBusTransfLocator = By.cssSelector("#menu-item-4140 > a > span.menu-item__text");
+    static By solutionLocator = By.cssSelector("#menu-item-4135 > a > span.menu-item__text");
 
     public InnovationPage(WebDriver driver) {
         super(driver);

@@ -8,8 +8,10 @@ public class Main {
     private static WebDriver driver; private static HomePage homepage; private static InnovationPage innovationPage;
     private static ItBusinessTransPage itBusinessTransPage; private static CustomSoftDevPage customSoftDevPage;
     private static AgentChangeStaffPage agentChangeStaffPage; private static ItFoundationPage itFoundationPage;
+    private static SupportServicePage supportServicePage; private static NetworkSolutionsPage networkSolutionsPage;
+    private static AboutUsPage aboutUsPage; private static LoQueNosDifPage loQueNosDifPage;
+    private static BlogPage blogPage; private static CaseStudiesPage caseStudiesPage; private static JobPage jobPage;
     private static ItProtectionSecurityPage itProtectionSecurityPage;
-
 
     public static  void main(String[] args) {
 
@@ -67,11 +69,53 @@ public class Main {
 
         //Support Service
         //Confirm you are in the It Protection & Security Page
+        supportServicePage = new SupportServicePage(driver);
+        Print(supportServicePage.confirmSupportServicePage());
+        //Go to Network Solutions Page
+        supportServicePage.goNextPage();
 
-        //homepage.closeBrowser();
+        //Network Solutions Page
+        //Confirm you are in the Network Solutions Page
+        networkSolutionsPage = new NetworkSolutionsPage(driver);
+        Print(networkSolutionsPage.confirmNetworkSolutionsPage());
+        //Go to About Us Page
+        networkSolutionsPage.goNextPage();
 
+        //About Us Page
+        //Confirm your are in the About Us Page
+        aboutUsPage = new AboutUsPage(driver);
+        Print(aboutUsPage.confirmAboutUsPage());
+        //Go to Lo que nos diferencia Page
+        aboutUsPage.goNextPage();
 
+        //Lo que nos diferencia Page
+        //Confirm you are in the Lo que nos diferencia Page
+        loQueNosDifPage = new LoQueNosDifPage(driver);
+        Print(loQueNosDifPage.confirmLoQueNosDifPage());
+        //Go to  Blog Page
+        loQueNosDifPage.goNextPage();
 
+        //Blog Page
+        //Confirm you are in the Blog Page
+        blogPage = new BlogPage(driver);
+        Print(blogPage.confirmBlogPage());
+        //Go to Casos de Estudio Page
+        blogPage.goNextPage();
+
+        //Casos de Estudio Page
+        //Confirm you are in the Casos de Estudio Page
+        caseStudiesPage = new CaseStudiesPage(driver);
+        Print(caseStudiesPage.confirmCaseStudiesPage());
+        //Go to Job Page
+        caseStudiesPage.goNextPage();
+
+        //Empleos
+        //Confirm you are in the Job Page
+        jobPage = new JobPage(driver);
+        Print(jobPage.confirmJobPage());
+
+        //Cerrar Navegador
+        homepage.closeBrowser();
     }
 
     //Method for print

@@ -51,8 +51,9 @@ public class Base {
 
     //Method to wait for a element to appear
     public static void waitElement(WebElement element){
-        wait = new WebDriverWait(driver,30);
-        wait.until(ExpectedConditions.visibilityOf(element));
+        wait = new WebDriverWait(driver,120);
+        //wait.until(ExpectedConditions.visibilityOf(element));
+        wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
     //Method for hover
